@@ -16,8 +16,12 @@ function setup() {
     const width = squareSize;
     const height = squareSize;
 
-    createCanvas(400, 400);
+    const borderColor = color("#404040");
+    
+    createCanvas(canvasSize, canvasSize);
+    
     background(220);
+
 
     let x = 0;
     let y = 0;
@@ -28,6 +32,15 @@ function setup() {
           const actualHeight = random(possibleCellSizes);
 
         x = 0
+
+        const colorCode  = random(possibleColors);
+        const myColor = color(colorCode);
+
+        strokeWeight(10);
+        stroke(borderColor);
+
+        let actualWidth = random (possibleCellSizes);
+        if(x + actualWidth > canvasSize) actualWidth = canvasSize - x;
 
 
         while (x < canvasSize) {
