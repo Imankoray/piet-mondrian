@@ -11,10 +11,9 @@ function setup() {
     //canvas size in pixels
     const canvasSize = squareSize * cellNumber;
 
-    const row = squareSize
-    const column = squareSize
+const width = squareSize;
+const height = squareSize;
 
-    
         createCanvas(400, 400);
         background(220);
 
@@ -22,6 +21,9 @@ function setup() {
         let y = 0;
 
         while(y < canvasSize) {
+
+        x=0
+
             while (x < canvasSize){
 
               
@@ -33,12 +35,6 @@ function setup() {
                 fill(myColor)
     
                
-    
-                //calculate horizontal positon in pixels
-                const x = row * squareSize;
-    
-                //calculate vertical position in pixels
-                const y = column * squareSize; 
     
     
                 //set width and height
@@ -53,7 +49,11 @@ function setup() {
                 //s = size of the side of the square
                  rect(x, y, width, height);
     
-    
+    //update x
+    x = x + width;
+
+    //update y
+    y= y + height;
     
             }
         }
