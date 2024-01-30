@@ -1,6 +1,9 @@
 
 function setup() {
 
+    const possibleColors = ["#f3f3f3", "#fbe317","#0c7fbf","#000000", "#f50f0f" ];
+
+
     //size of each square
     const squareSize = 40;
     //number of cells of the grid
@@ -8,17 +11,24 @@ function setup() {
     //canvas size in pixels
     const canvasSize = squareSize * cellNumber;
 
+    const row = squareSize
+    const column = squareSize
+
     
         createCanvas(400, 400);
         background(220);
-    
-        for(let row = 0; row < cellNumber; row++) {
-            for(let column = 0; column < cellNumber; column++) {
-                const red = random (255);
-                const green = random(255);
-                const blue = random(255);
-    
-                const myColor = color(red, green, blue);
+
+        let x = 0;
+        let y = 0;
+
+        while(y < canvasSize) {
+            while (x < canvasSize){
+
+              
+                //choose random hex code from all the possible colours 
+                const colorCode = random(possibleColors);
+                //store color object in myColor
+                const myColor = color(colorCode);
     
                 fill(myColor)
     
@@ -37,11 +47,11 @@ function setup() {
     
                 
     
-                //square (x, y, r)
+                //rect (x, y, width, height)
                 //x = position of the left of the square
                 //y - postiion of the top of the square
                 //s = size of the side of the square
-                 square(x, y, width);
+                 rect(x, y, width, height);
     
     
     
